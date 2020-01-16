@@ -19,7 +19,7 @@ def gameloop_2ghosts():
 	yg2=yg1+grid_width
 	while not crashed:
 		for event in pygame.event.get():
-			arr[floor((ys-y)/grid_width)][floor((xs-x)/grid_width)]=2
+			arr[int(floor(ys-y)/grid_width)][int(floor(xs-x)/grid_width)]=2
 			c=0
 			t=0
 			up=0
@@ -52,40 +52,40 @@ def gameloop_2ghosts():
 				ch=randint(1,4)
 				ch1=randint(1,4)
 				if ch!=ch1:
-					if ch==1 and 0<=floor((yg1-y)/grid_width)<10 and 0<=floor((xg1+grid_width-x)/grid_width)<10 and not arr[floor((yg1-y)/grid_width)][floor((xg1+grid_width-x)/grid_width)]==1:
+					if ch==1 and 0<=int(floor(yg1-y)/grid_width)<10 and 0<=int(floor(xg1+grid_width-x)/grid_width)<10 and not arr[int(floor(yg1-y)/grid_width)][int(floor(xg1+grid_width-x)/grid_width)]==1:
 						xg1+=grid_width
-					elif ch==2 and 0<=floor((yg1-y)/grid_width)<10 and 0<=floor((xg1-grid_width-x)/grid_width)<10 and not arr[floor((yg1-y)/grid_width)][floor((xg1-grid_width-x)/grid_width)]==1 :
+					elif ch==2 and 0<=int(floor(yg1-y)/grid_width)<10 and 0<=int(floor(xg1-grid_width-x)/grid_width)<10 and not arr[int(floor(yg1-y)/grid_width)][int(floor(xg1-grid_width-x)/grid_width)]==1 :
 						xg1-=grid_width
-					elif ch==3 and 0<=floor((xg1-x)/grid_width)<10 and 0<=floor((yg1+grid_width-y)/grid_width)<10 and not arr[floor((yg1+grid_width-y)/grid_width)][floor((xg1-x)/grid_width)]==1:
+					elif ch==3 and 0<=int(floor(xg1-x)/grid_width)<10 and 0<=int(floor(yg1+grid_width-y)/grid_width)<10 and not arr[int(floor(yg1+grid_width-y)/grid_width)][int(floor(xg1-x)/grid_width)]==1:
 						yg1+=grid_width
-					elif ch==4 and 0<=floor((xg1-x)/grid_width)<10 and 0<=floor((yg1-grid_width-y)/grid_width)<10 and not arr[floor((yg1-grid_width-y)/grid_width)][floor((xg1-x)/grid_width)]==1:
+					elif ch==4 and 0<=int(floor(xg1-x)/grid_width)<10 and 0<=int(floor(yg1-grid_width-y)/grid_width)<10 and not arr[int(floor(yg1-grid_width-y)/grid_width)][int(floor(xg1-x)/grid_width)]==1:
 						yg1-=grid_width
-					if ch1==1 and 0<=floor((yg2-y)/grid_width)<10 and 0<=floor((xg2+grid_width-x)/grid_width)<10 and not arr[floor((yg2-y)/grid_width)][floor((xg2+grid_width-x)/grid_width)]==1:
+					if ch1==1 and 0<=int(floor(yg2-y)/grid_width)<10 and 0<=int(floor(xg2+grid_width-x)/grid_width)<10 and not arr[int(floor(yg2-y)/grid_width)][int(floor(xg2+grid_width-x)/grid_width)]==1:
 						xg2+=grid_width
-					elif ch1==2 and 0<=floor((yg2-y)/grid_width)<10 and 0<=floor((xg2-grid_width-x)/grid_width)<10 and not arr[floor((yg2-y)/grid_width)][floor((xg2-grid_width-x)/grid_width)]==1 :
+					elif ch1==2 and 0<=int(floor(yg2-y)/grid_width)<10 and 0<=int(floor(xg2-grid_width-x)/grid_width)<10 and not arr[int(floor(yg2-y)/grid_width)][int(floor(xg2-grid_width-x)/grid_width)]==1 :
 						xg2-=grid_width
-					elif ch1==3 and 0<=floor((xg2-x)/grid_width)<10 and 0<=floor((yg2+grid_width-y)/grid_width)<10 and not arr[floor((yg2+grid_width-y)/grid_width)][floor((xg2-x)/grid_width)]==1:
+					elif ch1==3 and 0<=int(floor(xg2-x)/grid_width)<10 and 0<=int(floor(yg2+grid_width-y)/grid_width)<10 and not arr[int(floor(yg2+grid_width-y)/grid_width)][int(floor(xg2-x)/grid_width)]==1:
 						yg2+=grid_width
-					elif ch1==4 and 0<=floor((xg2-x)/grid_width)<10 and 0<=floor((yg2-grid_width-y)/grid_width)<10 and not arr[floor((yg2-grid_width-y)/grid_width)][floor((xg2-x)/grid_width)]==1:
+					elif ch1==4 and 0<=int(floor(xg2-x)/grid_width)<10 and 0<=int(floor(yg2-grid_width-y)/grid_width)<10 and not arr[int(floor(yg2-grid_width-y)/grid_width)][int(floor(xg2-x)/grid_width)]==1:
 						yg2-=grid_width
-				if event.key==pygame.K_RIGHT and 0<=floor((y0-y)/grid_width)<10 and 0<=floor((x0+grid_width-x)/grid_width)<10 and not arr[floor((y0-y)/grid_width)][floor((x0+grid_width-x)/grid_width)]==1:
+				if event.key==pygame.K_RIGHT and 0<=int(floor(y0-y)/grid_width)<10 and 0<=int(floor(x0+grid_width-x)/grid_width)<10 and not arr[int(floor(y0-y)/grid_width)][int(floor(x0+grid_width-x)/grid_width)]==1:
 					x0+=grid_width
-					arr[floor((y0-y)/grid_width)][floor((x0-x)/grid_width)]=2
+					arr[int(floor(y0-y)/grid_width)][int(floor(x0-x)/grid_width)]=2
 					score+=1
 					right=1
-				elif event.key==pygame.K_LEFT and 0<=floor((y0-y)/grid_width)<10 and 0<=floor((x0-grid_width-x)/grid_width)<10 and not arr[floor((y0-y)/grid_width)][floor((x0-grid_width-x)/grid_width)]==1:
+				elif event.key==pygame.K_LEFT and 0<=int(floor(y0-y)/grid_width)<10 and 0<=int(floor(x0-grid_width-x)/grid_width)<10 and not arr[int(floor(y0-y)/grid_width)][int(floor(x0-grid_width-x)/grid_width)]==1:
 					x0-=grid_width
-					arr[floor((y0-y)/grid_width)][floor((x0-x)/grid_width)]=2
+					arr[int(floor(y0-y)/grid_width)][int(floor(x0-x)/grid_width)]=2
 					score+=1
 					left=1
-				elif event.key==pygame.K_UP and 0<=floor((x0-x)/grid_width)<10 and 0<=floor((y0-grid_width-y)/grid_width)<10 and not arr[floor((y0-grid_width-y)/grid_width)][floor((x0-x)/grid_width)]==1: 
+				elif event.key==pygame.K_UP and 0<=int(floor(x0-x)/grid_width)<10 and 0<=int(floor(y0-grid_width-y)/grid_width)<10 and not arr[int(floor(y0-grid_width-y)/grid_width)][int(floor(x0-x)/grid_width)]==1: 
 					y0-=grid_width
-					arr[floor((y0-y)/grid_width)][floor((x0-x)/grid_width)]=2
+					arr[int(floor(y0-y)/grid_width)][int(floor(x0-x)/grid_width)]=2
 					score+=1
 					up=1
-				elif event.key==pygame.K_DOWN and 0<=floor((x0-x)/grid_width)<10 and 0<=floor((y0+grid_width-y)/grid_width)<10 and not arr[floor((y0+grid_width-y)/grid_width)][floor((x0-x)/grid_width)]==1:
+				elif event.key==pygame.K_DOWN and 0<=int(floor(x0-x)/grid_width)<10 and 0<=int(floor(y0+grid_width-y)/grid_width)<10 and not arr[int(floor(y0+grid_width-y)/grid_width)][int(floor(x0-x)/grid_width)]==1:
 					y0+=grid_width
-					arr[floor((y0-y)/grid_width)][floor((x0-x)/grid_width)]=2
+					arr[int(floor(y0-y)/grid_width)][int(floor(x0-x)/grid_width)]=2
 					score+=1
 					down=1
 			scoring(score)
